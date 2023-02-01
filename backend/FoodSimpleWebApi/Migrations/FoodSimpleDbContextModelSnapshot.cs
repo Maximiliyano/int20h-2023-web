@@ -36,7 +36,7 @@ namespace FoodSimpleWebApi.Migrations
                     b.Property<int>("Count")
                         .HasColumnType("int");
 
-                    b.Property<string>("Ingredient")
+                    b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -107,7 +107,8 @@ namespace FoodSimpleWebApi.Migrations
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(65)
+                        .HasColumnType("nvarchar(65)");
 
                     b.HasKey("Id");
 

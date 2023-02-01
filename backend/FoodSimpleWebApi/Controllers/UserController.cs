@@ -16,7 +16,7 @@ public class UserController : GlobalApiController
         _userServices = userServices;
     }
 
-    [HttpGet]
+    [HttpGet("all")]
     public async Task<IActionResult> GetAll()
     {
         return Ok(await _userServices.GetAll());
