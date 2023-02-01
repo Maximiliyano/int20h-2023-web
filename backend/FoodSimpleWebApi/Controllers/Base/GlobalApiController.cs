@@ -3,6 +3,5 @@
 namespace FoodSimpleWebApi.Controllers.Base;
 
 [Route("api/[controller]")]
-public abstract class GlobalApiController : ControllerBase
-{
+public abstract class GlobalApiController : ControllerBase {
 }
