@@ -13,7 +13,8 @@ public class FoodSimpleDbContext : DbContext
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        //modelBuilder.Configure(); TODO
+        // TODO uncomment after complete modelBuilderExtension
+        //modelBuilder.Configure();
         //modelBuilder.Seed();
     }
 }

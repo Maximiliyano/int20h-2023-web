@@ -9,10 +9,12 @@ public sealed class UserDto
     
     [MaxLength(50)]
     public string Name { get; set; }
+    
     [MaxLength(250)]
     [RegularExpression(BaseConstants.Email)]
     public string Email { get; set; }
     
+    [MaxLength(65)]
     public string Password { get; set; }
     
     public IEnumerable<ProductDto>? Products { get; set; }
