@@ -1,7 +1,6 @@
 ﻿namespace FoodSimpleWebApi.Enums;
 
-public enum CategoryProduct
-{
+public enum CategoryProduct {
     Cereal = 1,
     Vegetables = 2,
     Fruits = 3,
