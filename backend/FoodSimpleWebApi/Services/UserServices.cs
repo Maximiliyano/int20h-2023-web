@@ -22,10 +22,7 @@ public sealed class UserServices : BaseService
     {
         var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == userId);
 
-        if (user == null)
-        {
-            return false;
-        }
+        if (user == null) return false;
 
         _context.Users.Remove(user);
         await _context.SaveChangesAsync();
@@ -37,10 +34,7 @@ public sealed class UserServices : BaseService
     {
         var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == userDto.Id);
 
-        if (user == null)
-        {
-            return user;
-        }
+        if (user == null) return user;
 
         user.Name = userDto.Name;
         user.Email = userDto.Email;
