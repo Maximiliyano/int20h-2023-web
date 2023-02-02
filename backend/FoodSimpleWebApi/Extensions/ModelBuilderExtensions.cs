@@ -1,4 +1,5 @@
 ﻿using FoodSimpleWebApi.Models;
+using FoodSimpleWebApi.Helpers;
 using Microsoft.EntityFrameworkCore;
 
 namespace FoodSimpleWebApi.Extensions;
@@ -18,9 +19,17 @@ public static class ModelBuilderExtensions
     {
         var users = GenerateRandomUsers();
     }
-
-    private static IEnumerable<UserDto> GenerateRandomUsers()
-    {
-        return new[] { new UserDto() };
+    
+    private static IEnumerable<UserDto> GenerateRandomUsers() {
+        var randomUsers = new List<UserDto>();
+        for (var i = 0; i < 10; i++) {
+            randomUsers.Add(new UserDto {
+                Name = AppHelper.RandomizeLowerLetters(5),
+                Email = $"{AppHelper.RandomizeLowerLetters(10)}@gmail.com",
+                Password = AppHelper.RandomizeCharsAndSymbol(12)
+            });
+        }
+        return randomUsers;
     }
+
 }
