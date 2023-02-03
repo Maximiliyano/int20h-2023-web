@@ -33,7 +33,7 @@
             </v-btn>
             <v-spacer></v-spacer>
             <v-row align="center" justify="end">
-              <v-col cols="2" sm="2" class="px-0"
+              <v-col cols="2" sm="2" class="px-0 d-flex flex-column justify-center align-center"
                 ><v-btn icon color="error" @click="card.count = changeCount(card.count, card.countType, false)">
                   <v-icon color="error">mdi-minus</v-icon>
                 </v-btn></v-col
@@ -45,11 +45,10 @@
                   hide-details
                   dense
                   v-model="card.count"
+                  :suffix="card.countType"
                 ></v-text-field
               ></v-col>
-              <v-col cols="3" sm="2" class="pr-0 pl-3 mr-n3"
-                >{{ card.countType}}</v-col>
-              <v-col cols="2" sm="2" class="px-0"
+              <v-col cols="2" sm="2" class="px-0 d-flex flex-column justify-center align-center"
                 ><v-btn icon color="success" @click="card.count = changeCount(card.count, card.countType, true)">
                   <v-icon color="success">mdi-plus</v-icon>
                 </v-btn></v-col
