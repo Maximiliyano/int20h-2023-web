@@ -6,14 +6,14 @@
         @click="drawer = !drawer"
       />
       <v-img
-        alt="gachi meal"
+        alt="ricecode meal"
         class="shrink mr-2"
         contain
-        src=".././public/gacha-club.svg"
+        src=".././public/logo.svg"
         transition="scale-transition"
-        width="65"
+        width="40"
       />
-      <h1 class="ml-100 mt-1">Gachi Meal</h1>
+      <h1 class="ml-100 mt-0">RiceCode Meal</h1>
       <v-spacer />
       <template v-if="$auth.isAuthenticated">
         <v-menu right bottom>
@@ -62,7 +62,7 @@
       <v-list dense nav>
         <v-list-item to="/receipts">
           <v-list-item-action>
-            <v-icon>mdi-receipt</v-icon>
+            <v-icon>mdi-receipt-text</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title> Receipts </v-list-item-title>
@@ -70,18 +70,10 @@
         </v-list-item>
         <v-list-item to="/products">
           <v-list-item-action>
-            <v-icon>mdi-format-list-bulleted</v-icon>
+            <v-icon>mdi-food-apple</v-icon>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>Products</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item to="/another">
-          <v-list-item-action>
-            <v-icon>mdi-kayaking</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Another</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>

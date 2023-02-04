@@ -8,7 +8,6 @@ import JsonTreeViewer from 'vue-json-tree-viewer'
 
 Vue.config.productionTip = false
 
-// ToDo: Change authconfig from PIS SUP to LUI when Auth0 page will be done
 Vue.use(Auth0Plugin, {
   domain: authConfig.domain,
   clientId: authConfig.clientId,

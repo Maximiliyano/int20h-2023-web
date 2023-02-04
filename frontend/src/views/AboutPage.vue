@@ -1,28 +1,12 @@
 <template>
   <v-main>
-    <v-container
-      class="fill-height"
-      fluid
-    >
-      <v-row
-        align="center"
-        justify="center"
-      >
-        <v-col
-          cols="12"
-          sm="8"
-          md="6"
-        >
-          <div class="display-3">
-            Gachi Meal
-          </div>
+    <v-container class="fill-height" fluid>
+      <v-row align="center" justify="center">
+        <v-col cols="12" sm="8" md="6">
+          <div class="display-3">RiceCode Meal</div>
           <v-divider />
-          <p class="headline pt-4">
-            You have reached the Gachi Meal.
-          </p>
-          <p class="headline pt-4">
-            Please login to continue.
-          </p>
+          <p class="headline pt-4">You have reached the RiceCode Meal.</p>
+          <p class="headline pt-4">Please login to continue.</p>
           <v-btn
             v-if="!$auth.isAuthenticated"
             ref="loginBtn"
@@ -52,6 +36,4 @@ export default {
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

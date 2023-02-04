@@ -13,7 +13,7 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    beforeEnter: authGuard('/home'),
+    beforeEnter: authGuard('/receipts'),
     component: () => import('../views/AboutPage.vue'),
     meta: {
       title: 'Home Page'
@@ -21,16 +21,7 @@ const routes = [
   },
   {
     path: '/login',
-    beforeEnter: authGuard('/home')
-  },
-  {
-    path: '/home',
-    name: 'Home Page',
-    component: () => import('../views/HomePage.vue'),
-    beforeEnter: authGuard(null),
-    meta: {
-      title: 'Home Page'
-    }
+    beforeEnter: authGuard('/receipts')
   },
   {
     path: '/receipts',
@@ -48,15 +39,6 @@ const routes = [
     beforeEnter: authGuard(),
     meta: {
       title: 'Products Page'
-    }
-  },
-  {
-    path: '/another',
-    name: 'Another Page',
-    component: () => import('../views/AnotherPage.vue'),
-    beforeEnter: authGuard(),
-    meta: {
-      title: 'Another Page'
     }
   },
   {
