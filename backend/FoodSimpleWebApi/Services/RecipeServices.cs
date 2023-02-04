@@ -19,6 +19,26 @@ public sealed class RecipeServices : BaseService
         return recipeDto;
     }
 
+    public async Task<RecipeDto?> Update(RecipeDto recipeDto)
+    {
+        var recipe = await _context.Recipes.FirstOrDefaultAsync(u => u.Id == recipeDto.Id);
+
+        if (recipe == null)
+        {
+            return recipe;
+        }
+
+        recipe.Name = recipeDto.Name;
+        recipe.CookingTime = recipeDto.CookingTime;
+        recipe.Description = recipeDto.Description;
+        recipe.Products = recipeDto.Products;
+        recipe.Difficult = recipeDto.Difficult;
+
+        await _context.SaveChangesAsync();
+
+        return recipe;
+    }
+
     public async Task<bool> Delete(int recipeId)
     {
         var recipe = await _context.Recipes.FirstOrDefaultAsync(r => r.Id == recipeId);

@@ -18,10 +18,19 @@ public class RecipeController : GlobalApiController
     }
 
     [HttpPost]
-    public async Task<IActionResult> Add(RecipeDto recipeDto)
+    public async Task<IActionResult> Add([FromBody] RecipeDto recipeDto)
     {
         var recipe = await _recipeServices.Add(recipeDto);
         return CreatedAtAction(nameof(Get), new { recipeId = recipe.Id }, recipe);
+    }
+
+    [HttpPut]
+    public async Task<IActionResult> Update([FromBody] RecipeDto recipeDto)
+    {
+        var recipe = await _recipeServices.Update(recipeDto);
+        return recipe != null 
+            ? Ok(recipe) 
+            : NotFound();
     }
 
     [HttpDelete]

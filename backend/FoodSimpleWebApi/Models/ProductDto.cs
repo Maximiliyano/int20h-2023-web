@@ -1,14 +1,20 @@
-﻿using FoodSimpleWebApi.Enums;
+﻿using System.ComponentModel.DataAnnotations;
+using FoodSimpleWebApi.Attributes;
+using FoodSimpleWebApi.Enums;
 
 namespace FoodSimpleWebApi.Models;
 
-public sealed class ProductDto
+public class ProductDto
 {
     public int Id { get; set; }
-
+    
+    [MaxLength(50)]
+    public string Name { get; set; }
+    
+    [RequiredGreaterThanZero]
     public int Count { get; set; }
     
-    public string Description { get; set; }
-
+    public ProductUnit Unit { get; set; }
+    
     public CategoryProduct Category { get; set; }
 }

@@ -18,12 +18,12 @@ public class ProductController : GlobalApiController
     }
     
     [HttpPost]
-    public async Task<IActionResult> Create(ProductDto productDto)
+    public async Task<IActionResult> Create([FromBody] ProductDto productDto)
     {
         var product = await _productServices.Create(productDto);
         return CreatedAtAction(nameof(Get), new { productId = product.Id }, product);
     }
-    
+
     [HttpDelete]
     [Route("{productId:int}")]
     public async Task<IActionResult> Delete([FromRoute] int productId)

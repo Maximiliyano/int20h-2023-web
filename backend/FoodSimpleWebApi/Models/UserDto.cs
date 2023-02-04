@@ -3,7 +3,7 @@ using FoodSimpleWebApi.Constants;
 
 namespace FoodSimpleWebApi.Models;
 
-public sealed class UserDto
+public class UserDto
 {
     public int Id { get; set; }
     
@@ -16,7 +16,8 @@ public sealed class UserDto
     
     [MaxLength(65)]
     public string Password { get; set; }
+
+    public IList<ProductDto>? Products { get; set; }
     
-    public IEnumerable<ProductDto>? Products { get; set; }
-    public IEnumerable<RecipeDto>? Recipes { get; set; }
+    public IList<RecipeDto>? Recipes { get; set; }
 }

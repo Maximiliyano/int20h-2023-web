@@ -43,7 +43,7 @@ public class UserController : GlobalApiController
     [HttpPut]
     public async Task<IActionResult> Update([FromBody] UserDto userDto)
     {
-        var user = await _userServices.Update(userDto);
+        var user = await _userServices.UpdateProfile(userDto);
         return user != null 
             ? Ok(user) 
             : NotFound();
