@@ -49,6 +49,30 @@ public class UserController : GlobalApiController
             : NotFound();
     }
 
+    [HttpPut("add/product")]
+    public async Task<IActionResult> AddProduct(int userId, ProductDto productDto)
+    {
+        return Ok(await _userServices.AddProduct(userId, productDto));
+    }
+    
+    [HttpDelete("remove/product")]
+    public async Task<IActionResult> RemoveProduct(int userId, int productId)
+    {
+        return Ok(await _userServices.RemoveProduct(userId, productId));
+    }
+    
+    [HttpPut("add/recipe")]
+    public async Task<IActionResult> AddRecipe(int userId, RecipeDto recipeDto)
+    {
+        return Ok(await _userServices.AddRecipe(userId, recipeDto));
+    }
+    
+    [HttpDelete("remove/recipe")]
+    public async Task<IActionResult> RemoveRecipe(int userId, int recipeId)
+    {
+        return Ok(await _userServices.RemoveRecipe(userId, recipeId));
+    }
+
     [HttpDelete]
     [Route("{userId:int}")]
     public async Task<IActionResult> Delete([FromRoute] int userId)

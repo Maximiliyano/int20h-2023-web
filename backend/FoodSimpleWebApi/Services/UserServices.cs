@@ -14,7 +14,7 @@ public sealed class UserServices : BaseService
         await _context.Users.AddAsync(userDto);
         await _context.SaveChangesAsync();
         
-        userDto.Id = _context.Users.FirstAsync(u => u.Name == userDto.Name).Id;
+        userDto.Id = _context.Users.FirstAsync(u => u.Email == userDto.Email).Id;
         return userDto;
     }
 
@@ -41,8 +41,7 @@ public sealed class UserServices : BaseService
         {
             return user;
         }
-
-        user.Name = userDto.Name;
+        
         user.Email = userDto.Email;
 
         await _context.SaveChangesAsync();

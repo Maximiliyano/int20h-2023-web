@@ -12,7 +12,7 @@ public class ProductDto
     public string Name { get; set; }
     
     [RequiredGreaterThanZero]
-    public int Count { get; set; }
+    public string Count { get; set; }
     
     public ProductUnit Unit { get; set; }
     

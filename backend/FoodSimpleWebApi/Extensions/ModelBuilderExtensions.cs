@@ -1,5 +1,4 @@
-﻿using FoodSimpleWebApi.Enums;
-using FoodSimpleWebApi.Helpers;
+﻿using FoodSimpleWebApi.Helpers;
 using FoodSimpleWebApi.Models;
 using FoodSimpleWebApi.StringFormats;
 using Microsoft.EntityFrameworkCore;
@@ -12,7 +11,7 @@ public static class ModelBuilderExtensions
     public static void Configure(this ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<UserDto>()
-            .HasOne(u => u.Name)
+            .HasOne(u => u.Email)
             .WithMany()
             .OnDelete(DeleteBehavior.Restrict);
     }
@@ -46,10 +45,10 @@ public static class ModelBuilderExtensions
 
         for (var i = 0; i < limit; i++)
         {
-            products.Add(new RecipeDto());
+            products.Add(BuildRecipeDto(i));
         }
         
-        return new[] { new RecipeDto() };
+        return products;
     }
     
     private static IList<ProductDto> GenerateRandomProducts(int limit)
@@ -63,13 +62,20 @@ public static class ModelBuilderExtensions
         return products;
     }
 
+    private static RecipeDto BuildRecipeDto(int id) =>
+        new ()
+        {
+            Id = id + 1,
+            Name = AppHelper.RandomizeCharacters(10),
+            Description = AppHelper.RandomizeCharacters(5000),
+            Difficult = AppHelper.RandomCookDifficult()
+        };
+    
     private static UserDto BuildUserDto(int id, IList<ProductDto>? products = null, IList<RecipeDto>? recipes = null) =>
         new()
         {
             Id = id + 1,
             Email = string.Format(BaseFormat.Email, AppHelper.RandomizeCharacters(7)),
-            Name = AppHelper.RandomizeCharacters(7),
-            Password = AppHelper.RandomizeCharacters(6),
             Products = products,
             Recipes = recipes
         };
@@ -78,8 +84,8 @@ public static class ModelBuilderExtensions
         new()
         {
             Id = id + 1,
-            Category = (CategoryProduct)AppHelper.RandomCategoryProduct(),
-            Count = AppHelper.RandomizeNumber(1, 10),
+            Category = AppHelper.RandomCategoryProduct(),
+            Count = AppHelper.RandomizeNumber(1, 10).ToString(),
             Name = AppHelper.RandomizeCharacters(10),
             Unit = AppHelper.RandomProductUnit()
         };

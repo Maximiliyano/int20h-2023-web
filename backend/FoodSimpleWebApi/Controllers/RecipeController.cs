@@ -69,4 +69,10 @@ public class RecipeController : GlobalApiController
     {
         return Ok(await _recipeServices.GetAllFilteredByDifficult(cookDifficult));
     }
+
+    [HttpGet("{recipeId:int}/difficult")]
+    public async Task<IActionResult> GetDifficult(int recipeId)
+    {
+        return Ok(await _recipeServices.GetDifficult(recipeId));
+    }
 }
