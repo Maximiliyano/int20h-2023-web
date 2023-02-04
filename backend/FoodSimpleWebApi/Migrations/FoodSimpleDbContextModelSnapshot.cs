@@ -34,11 +34,15 @@ namespace FoodSimpleWebApi.Migrations
                     b.Property<int>("Count")
                         .HasColumnType("int");
 
-                    b.Property<string>("Description")
+                    b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int?>("RecipeDtoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Unit")
                         .HasColumnType("int");
 
                     b.Property<int?>("UserDtoId")
@@ -66,14 +70,16 @@ namespace FoodSimpleWebApi.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
 
                     b.Property<int>("Difficult")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int?>("UserDtoId")
                         .HasColumnType("int");
@@ -111,6 +117,78 @@ namespace FoodSimpleWebApi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Email = "TNRPUPE@gmail.com",
+                            Name = "KCILPNH",
+                            Password = "UGTJHS"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Email = "RCBPPAA@gmail.com",
+                            Name = "IHVCQFN",
+                            Password = "CPVWAR"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Email = "YQDFDKC@gmail.com",
+                            Name = "JSXQUBP",
+                            Password = "OBVPAI"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Email = "VQSGLBW@gmail.com",
+                            Name = "CBTIPLM",
+                            Password = "PEHGNV"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Email = "MQYDHSE@gmail.com",
+                            Name = "WOIQCMA",
+                            Password = "FGWXNR"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Email = "QLGVTIO@gmail.com",
+                            Name = "MOXEEDH",
+                            Password = "TARTXN"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Email = "LSVARLX@gmail.com",
+                            Name = "KDRMZYM",
+                            Password = "GVELVB"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Email = "GLXXRWF@gmail.com",
+                            Name = "LKAFXLJ",
+                            Password = "LVMCTZ"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Email = "NXIAQYE@gmail.com",
+                            Name = "YAGEGZX",
+                            Password = "KGJZBN"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Email = "FIUAHON@gmail.com",
+                            Name = "GHZZRIS",
+                            Password = "TDRHVV"
+                        });
                 });
 
             modelBuilder.Entity("FoodSimpleWebApi.Models.ProductDto", b =>

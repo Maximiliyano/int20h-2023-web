@@ -42,10 +42,18 @@ public class UserController : GlobalApiController {
     }
 
     [HttpPut]
+<<<<<<< HEAD
     public async Task<IActionResult> Update([FromBody] UserDto userDto) {
         UserDto? user = await _userServices.Update(userDto);
         return user != null
             ? Ok(user)
+=======
+    public async Task<IActionResult> Update([FromBody] UserDto userDto)
+    {
+        var user = await _userServices.UpdateProfile(userDto);
+        return user != null 
+            ? Ok(user) 
+>>>>>>> 1f754b1 (complete services)
             : NotFound();
     }
 

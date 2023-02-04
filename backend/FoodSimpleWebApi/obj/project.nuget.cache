@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "46vE/FJWPiNYFTOHIvLe77N/rVwAL0GqBFIM+p1PauaiEBW2+atFVXPVjYaKCp8RhUHSGTkYfrZeNvVcbMPBnQ==",
+=======
+  "dgSpecHash": "+6iLOZv146bltgyAK3B1wiSP8W9SONXox+sQLBYcVhGRLaHNTaJss6EMudiSAM0v+Sk2p4WOPjV3JOLtU+p5OA==",
+>>>>>>> 1f754b1 (complete services)
   "success": true,
   "projectFilePath": "C:\\Users\\алекс\\Source\\Repos\\int20h-2023-web\\backend\\FoodSimpleWebApi\\FoodSimpleWebApi.csproj",
   "expectedPackageFiles": [

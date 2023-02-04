@@ -3,7 +3,12 @@ using System.ComponentModel.DataAnnotations;
 
 namespace FoodSimpleWebApi.Models;
 
+<<<<<<< HEAD
 public sealed class UserDto {
+=======
+public class UserDto
+{
+>>>>>>> 1f754b1 (complete services)
     public int Id { get; set; }
 
     [MaxLength(50)]
@@ -16,7 +21,10 @@ public sealed class UserDto {
     
     [MaxLength(65)]
     public string Password { get; set; }
+
+    public IList<ProductDto>? Products { get; set; }
     
+<<<<<<< HEAD
 =======
     public string? Name { get; set; }
     [MaxLength(250)]
@@ -28,4 +36,7 @@ public sealed class UserDto {
 >>>>>>> 57e9b99 (очистив код та виправив декілька попереджень)
     public IEnumerable<ProductDto>? Products { get; set; }
     public IEnumerable<RecipeDto>? Recipes { get; set; }
+=======
+    public IList<RecipeDto>? Recipes { get; set; }
+>>>>>>> 1f754b1 (complete services)
 }

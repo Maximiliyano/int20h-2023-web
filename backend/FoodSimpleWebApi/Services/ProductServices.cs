@@ -15,7 +15,7 @@ public sealed class ProductServices : BaseService
         await _context.Products.AddAsync(productDto);
         await _context.SaveChangesAsync();
 
-        productDto.Id = _context.Products.FirstAsync(p => p.Description == productDto.Description).Id;
+        productDto.Id = _context.Products.FirstAsync(p => p.Name == productDto.Name).Id;
         return productDto;
     }
 

@@ -1,4 +1,5 @@
-﻿using FoodSimpleWebApi.Models;
+﻿using FoodSimpleWebApi.Extensions;
+using FoodSimpleWebApi.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace FoodSimpleWebApi.Data;
@@ -13,13 +14,16 @@ public class FoodSimpleDbContext : DbContext {
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        // TODO uncomment after complete modelBuilderExtension
         //modelBuilder.Configure();
+<<<<<<< HEAD
 =======
 
     protected override void OnModelCreating(ModelBuilder modelBuilder) {
         //modelBuilder.Configure(); TODO
 >>>>>>> 57e9b99 (очистив код та виправив декілька попереджень)
         //modelBuilder.Seed();
+=======
+        modelBuilder.Seed();
+>>>>>>> 1f754b1 (complete services)
     }
 }
