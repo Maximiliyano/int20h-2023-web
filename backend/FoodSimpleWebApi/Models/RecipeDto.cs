@@ -1,11 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using FoodSimpleWebApi.Attributes;
 using FoodSimpleWebApi.Enums;
 
 namespace FoodSimpleWebApi.Models;
 
 public sealed class RecipeDto {
     public int Id { get; set; }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     public int CookingTime { get; set; }
@@ -19,12 +19,14 @@ public sealed class RecipeDto {
     [RequiredGreaterThanZero]
     public int CookingTime { get; set; }
     
+=======
+
+>>>>>>> 57f828b (fetch requirment)
     [MaxLength(50)]
     public string Name { get; set; }
     
-    [MaxLength(250)]
     public string Description { get; set; }
-    
+
     public IList<ProductDto> Products { get; set; }
 >>>>>>> 1f754b1 (complete services)
 

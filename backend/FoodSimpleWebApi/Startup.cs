@@ -31,6 +31,7 @@ public class Startup {
             //app.UseDeveloperExceptionPage();
             app.UseSwagger();
             app.UseSwaggerUI();
+            // TODO remove this after complete tasks
         }
 
         app.UseRouting();

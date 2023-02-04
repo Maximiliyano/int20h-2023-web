@@ -46,7 +46,14 @@ public static class AppHelper
         return number;
 =======
     
-    public static Enum RandomCategoryProduct()
+    public static CookDifficult RandomCookDifficult()
+    {
+        var values = Enum.GetValues(typeof(CookDifficult));
+        var randomBar = (CookDifficult)(values.GetValue(Random.Next(values.Length)) ?? throw new InvalidOperationException("Cook Difficult not contain such data!"));
+        return randomBar;
+    }
+    
+    public static CategoryProduct RandomCategoryProduct()
     {
         var values = Enum.GetValues(typeof(CategoryProduct));
         var randomBar = (CategoryProduct)(values.GetValue(Random.Next(values.Length)) ?? throw new InvalidOperationException("Category Product not contain such data!"));

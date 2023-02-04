@@ -11,8 +11,13 @@ public sealed class UserServices : BaseService {
     public async Task<UserDto> Create(UserDto userDto) {
         await _context.Users.AddAsync(userDto);
         await _context.SaveChangesAsync();
+<<<<<<< HEAD
 
         userDto.Id = _context.Users.FirstAsync(u => u.Name == userDto.Name).Id;
+=======
+        
+        userDto.Id = _context.Users.FirstAsync(u => u.Email == userDto.Email).Id;
+>>>>>>> 57f828b (fetch requirment)
         return userDto;
     }
 
@@ -36,9 +41,17 @@ public sealed class UserServices : BaseService {
         var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == userDto.Id);
 >>>>>>> 1f754b1 (complete services)
 
+<<<<<<< HEAD
         if (user == null) return user;
 
         user.Name = userDto.Name;
+=======
+        if (user == null)
+        {
+            return user;
+        }
+        
+>>>>>>> 57f828b (fetch requirment)
         user.Email = userDto.Email;
 
         await _context.SaveChangesAsync();

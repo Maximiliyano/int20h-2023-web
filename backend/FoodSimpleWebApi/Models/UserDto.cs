@@ -10,17 +10,18 @@ public class UserDto
 {
 >>>>>>> 1f754b1 (complete services)
     public int Id { get; set; }
+<<<<<<< HEAD
 
     [MaxLength(50)]
 <<<<<<< HEAD
     public string Name { get; set; }
     
     [MaxLength(250)]
+=======
+    
+>>>>>>> 57f828b (fetch requirment)
     [RegularExpression(BaseConstants.Email)]
     public string Email { get; set; }
-    
-    [MaxLength(65)]
-    public string Password { get; set; }
 
     public IList<ProductDto>? Products { get; set; }
     

@@ -16,8 +16,12 @@ public class ProductDto
     public string Name { get; set; }
     
     [RequiredGreaterThanZero]
+<<<<<<< HEAD
     public int Count { get; set; }
 <<<<<<< HEAD
+=======
+    public string Count { get; set; }
+>>>>>>> 57f828b (fetch requirment)
     
 <<<<<<< HEAD
     public string Description { get; set; }

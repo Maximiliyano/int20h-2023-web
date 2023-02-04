@@ -29,7 +29,6 @@ public sealed class RecipeServices : BaseService
         }
 
         recipe.Name = recipeDto.Name;
-        recipe.CookingTime = recipeDto.CookingTime;
         recipe.Description = recipeDto.Description;
         recipe.Products = recipeDto.Products;
         recipe.Difficult = recipeDto.Difficult;
@@ -69,5 +68,10 @@ public sealed class RecipeServices : BaseService
         return from recipe in recipes
             where recipe.Difficult == cookDifficult
             select recipe;
+    }
+
+    public async Task<string?> GetDifficult(int recipeId)
+    {
+        return (await Get(recipeId))?.Difficult.ToString();
     }
 }
