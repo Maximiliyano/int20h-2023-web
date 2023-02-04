@@ -20,35 +20,35 @@ public static class ModelBuilderExtensions
     {
         var products = GenerateRandomProducts(10);
         var recipes = GenerateRandomRecipes(10);
-        var users = GenerateRandomUsers(10, products, recipes);
+        var users = GenerateRandomUsers(10);
 
         modelBuilder.Entity<UserDto>().HasData(users);
         modelBuilder.Entity<ProductDto>().HasData(products);
         modelBuilder.Entity<RecipeDto>().HasData(recipes);
     }
 
-    private static IEnumerable<UserDto> GenerateRandomUsers(int limit, IList<ProductDto> products, IList<RecipeDto> recipes)
+    private static IEnumerable<UserDto> GenerateRandomUsers(int limit, IList<ProductDto>? products = null, IList<RecipeDto>? recipes = null)
     {
         var users = new List<UserDto>();
         
         for (var i = 0; i < limit/2; i++)
         {
             users.Add(BuildUserDto(i));
-            users.Add(BuildUserDto(i, products, recipes));
+            //users.Add(BuildUserDto(i, products, recipes));
         }
         return users;
     }
 
     private static IList<RecipeDto> GenerateRandomRecipes(int limit)
     {
-        var products = new List<RecipeDto>();
+        var recipes = new List<RecipeDto>();
 
         for (var i = 0; i < limit; i++)
         {
-            products.Add(BuildRecipeDto(i));
+            recipes.Add(BuildRecipeDto(i));
         }
         
-        return products;
+        return recipes;
     }
     
     private static IList<ProductDto> GenerateRandomProducts(int limit)
@@ -67,7 +67,7 @@ public static class ModelBuilderExtensions
         {
             Id = id + 1,
             Name = AppHelper.RandomizeCharacters(10),
-            Description = AppHelper.RandomizeCharacters(5000),
+            Description = AppHelper.RandomizeCharacters(500),
             Difficult = AppHelper.RandomCookDifficult()
         };
     
