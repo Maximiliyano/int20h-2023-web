@@ -60,11 +60,15 @@ public sealed class UserServices : BaseService {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public async Task<UserDto?> Get(int userId) {
 =======
     public async Task<bool> AddProduct(int userId, ProductDto productDto)
+=======
+    public async Task<bool> AddProduct(string email, ProductDto productDto)
+>>>>>>> 1b7d31f (change logic userController)
     {
-        var user = await Get(userId);
+        var user = await Get(email);
         var product = user?.Products.FirstOrDefault(p => p.Id == productDto.Id);
 
         if (user == null || product != null)
@@ -79,9 +83,9 @@ public sealed class UserServices : BaseService {
         return false;
     }
     
-    public async Task<bool> RemoveProduct(int userId, int productId)
+    public async Task<bool> RemoveProduct(string email, int productId)
     {
-        var user = await Get(userId);
+        var user = await Get(email);
         var product = user?.Products.FirstOrDefault(p => p.Id == productId);
 
         if (user == null || product == null)
@@ -96,9 +100,9 @@ public sealed class UserServices : BaseService {
         return true;
     }
     
-    public async Task<UserDto?> AddRecipe(int userId, RecipeDto recipeDto)
+    public async Task<UserDto?> AddRecipe(string email, RecipeDto recipeDto)
     {
-        var user = await Get(userId);
+        var user = await Get(email);
 
         if (user == null)
         {
@@ -112,9 +116,9 @@ public sealed class UserServices : BaseService {
         return user;
     }
     
-    public async Task<bool> RemoveRecipe(int userId, int recipeId)
+    public async Task<bool> RemoveRecipe(string email, int recipeId)
     {
-        var user = await Get(userId);
+        var user = await Get(email);
         var recipe = user?.Recipes.FirstOrDefault(r => r.Id == recipeId);
 
         if (user == null || recipe == null)
@@ -129,10 +133,14 @@ public sealed class UserServices : BaseService {
         return true;
     }
 
-    public async Task<UserDto?> Get(int userId)
+    public async Task<UserDto?> Get(string email)
     {
+<<<<<<< HEAD
 >>>>>>> 1f754b1 (complete services)
         return await _context.Users.FirstOrDefaultAsync(u => u.Id == userId);
+=======
+        return await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+>>>>>>> 1b7d31f (change logic userController)
     }
 
     public async Task<IEnumerable<UserDto>> GetAll() {
