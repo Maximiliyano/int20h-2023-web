@@ -20,25 +20,27 @@ public static class ModelBuilderExtensions
     {
         var products = GenerateRandomProducts(10);
         var recipes = GenerateRandomRecipes(10);
-        var users = GenerateRandomUsers(10);
+        var users = GenerateRandomUsers(10, products, recipes);
 
         modelBuilder.Entity<UserDto>().HasData(users);
         modelBuilder.Entity<ProductDto>().HasData(products);
         modelBuilder.Entity<RecipeDto>().HasData(recipes);
     }
 
-    private static IEnumerable<UserDto> GenerateRandomUsers(int limit)
+    private static IEnumerable<UserDto> GenerateRandomUsers(int limit, IList<ProductDto> products, IList<RecipeDto> recipes)
     {
+        var concatLimit = limit / 2;
         var users = new List<UserDto>();
         
-        for (var i = 0; i < limit/2; i++)
+        for (var i = 0; i < concatLimit; i++)
         {
-            users.Add(BuildUserDto(i));
+            users.Add(BuildUserDto(i, new List<ProductDto>(), new List<RecipeDto>()));
+            users.Add(BuildUserDto(i + concatLimit, products, recipes));
         }
         return users;
     }
 
-    private static IEnumerable<RecipeDto> GenerateRandomRecipes(int limit)
+    private static IList<RecipeDto> GenerateRandomRecipes(int limit)
     {
         var recipes = new List<RecipeDto>();
 
@@ -50,7 +52,7 @@ public static class ModelBuilderExtensions
         return recipes;
     }
     
-    private static IEnumerable<ProductDto> GenerateRandomProducts(int limit)
+    private static IList<ProductDto> GenerateRandomProducts(int limit)
     {
         var products = new List<ProductDto>();
 
@@ -70,7 +72,7 @@ public static class ModelBuilderExtensions
             Difficult = AppHelper.RandomCookDifficult()
         };
     
-    private static UserDto BuildUserDto(int id, IList<ProductDto>? products = null, IList<RecipeDto>? recipes = null) =>
+    private static UserDto BuildUserDto(int id, IList<ProductDto> products, IList<RecipeDto> recipes) =>
         new()
         {
             Id = id + 1,
@@ -83,9 +85,9 @@ public static class ModelBuilderExtensions
         new()
         {
             Id = id + 1,
-            Category = AppHelper.RandomCategoryProduct(),
+            Category = AppHelper.RandomCategoryProduct().ToString(),
             Count = AppHelper.RandomizeNumber(1, 10).ToString(),
             Name = AppHelper.RandomizeCharacters(10),
-            Unit = AppHelper.RandomProductUnit()
+            Unit = AppHelper.RandomProductUnit().ToString()
         };
 }

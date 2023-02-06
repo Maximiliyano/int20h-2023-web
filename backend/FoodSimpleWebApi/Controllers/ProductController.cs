@@ -54,10 +54,4 @@ public class ProductController : GlobalApiController
     {
         return Ok(await _productServices.GetAll());
     }
-
-    [HttpGet("filteredBy")]
-    public async Task<IActionResult> GetAllFilteredByDifficult([FromQuery] CategoryProduct categoryProduct)
-    {
-        return Ok(await _productServices.GetAllFilteredByCategory(categoryProduct));
-    }
 }

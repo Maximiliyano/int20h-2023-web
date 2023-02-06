@@ -42,12 +42,4 @@ public sealed class ProductServices : BaseService
     {
         return await _context.Products.ToListAsync();
     }
-
-    public async Task<IEnumerable<ProductDto>> GetAllFilteredByCategory(CategoryProduct categoryProduct)
-    {
-        var products = await GetAll();
-        return from product in products
-            where product.Category == categoryProduct
-            select product;
-    }
 }

@@ -4,9 +4,13 @@ using System.ComponentModel.DataAnnotations;
 namespace FoodSimpleWebApi.Models;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 public sealed class UserDto {
 =======
 public class UserDto
+=======
+public sealed class UserDto
+>>>>>>> d528654 (added new feature)
 {
 >>>>>>> 1f754b1 (complete services)
     public int Id { get; set; }
@@ -23,8 +27,9 @@ public class UserDto
     [RegularExpression(BaseConstants.Email)]
     public string Email { get; set; }
 
-    public IList<ProductDto>? Products { get; set; }
+    public IList<ProductDto> Products = new List<ProductDto>();
     
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     public string? Name { get; set; }
@@ -40,4 +45,7 @@ public class UserDto
 =======
     public IList<RecipeDto>? Recipes { get; set; }
 >>>>>>> 1f754b1 (complete services)
+=======
+    public IList<RecipeDto> Recipes = new List<RecipeDto>();
+>>>>>>> d528654 (added new feature)
 }
