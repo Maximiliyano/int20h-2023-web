@@ -43,6 +43,8 @@ public sealed class UserServices : BaseService
         }
         
         user.Email = userDto.Email;
+        user.Products = userDto.Products;
+        user.Recipes = userDto.Recipes;
 
         await _context.SaveChangesAsync();
 
