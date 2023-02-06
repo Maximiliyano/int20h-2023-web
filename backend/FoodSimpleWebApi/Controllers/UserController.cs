@@ -23,11 +23,10 @@ public class UserController : GlobalApiController
     }
     
     [HttpGet]
-    [Route("{userId:int}")]
     [ActionName("Get")]
-    public async Task<IActionResult> Get([FromRoute] int userId)
+    public async Task<IActionResult> Get(string email)
     {
-        var user = await _userServices.Get(userId);
+        var user = await _userServices.Get(email);
         return user != null 
             ? Ok(user) 
             : NotFound();
@@ -50,27 +49,27 @@ public class UserController : GlobalApiController
     }
 
     [HttpPut("add/product")]
-    public async Task<IActionResult> AddProduct(int userId, ProductDto productDto)
+    public async Task<IActionResult> AddProduct(string email, ProductDto productDto)
     {
-        return Ok(await _userServices.AddProduct(userId, productDto));
+        return Ok(await _userServices.AddProduct(email, productDto));
     }
     
     [HttpDelete("remove/product")]
-    public async Task<IActionResult> RemoveProduct(int userId, int productId)
+    public async Task<IActionResult> RemoveProduct(string email, int productId)
     {
-        return Ok(await _userServices.RemoveProduct(userId, productId));
+        return Ok(await _userServices.RemoveProduct(email, productId));
     }
     
     [HttpPut("add/recipe")]
-    public async Task<IActionResult> AddRecipe(int userId, RecipeDto recipeDto)
+    public async Task<IActionResult> AddRecipe(string email, RecipeDto recipeDto)
     {
-        return Ok(await _userServices.AddRecipe(userId, recipeDto));
+        return Ok(await _userServices.AddRecipe(email, recipeDto));
     }
     
     [HttpDelete("remove/recipe")]
-    public async Task<IActionResult> RemoveRecipe(int userId, int recipeId)
+    public async Task<IActionResult> RemoveRecipe(string email, int recipeId)
     {
-        return Ok(await _userServices.RemoveRecipe(userId, recipeId));
+        return Ok(await _userServices.RemoveRecipe(email, recipeId));
     }
 
     [HttpDelete]

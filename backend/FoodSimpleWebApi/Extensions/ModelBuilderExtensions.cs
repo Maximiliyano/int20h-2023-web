@@ -27,19 +27,18 @@ public static class ModelBuilderExtensions
         modelBuilder.Entity<RecipeDto>().HasData(recipes);
     }
 
-    private static IEnumerable<UserDto> GenerateRandomUsers(int limit, IList<ProductDto>? products = null, IList<RecipeDto>? recipes = null)
+    private static IEnumerable<UserDto> GenerateRandomUsers(int limit)
     {
         var users = new List<UserDto>();
         
         for (var i = 0; i < limit/2; i++)
         {
             users.Add(BuildUserDto(i));
-            //users.Add(BuildUserDto(i, products, recipes));
         }
         return users;
     }
 
-    private static IList<RecipeDto> GenerateRandomRecipes(int limit)
+    private static IEnumerable<RecipeDto> GenerateRandomRecipes(int limit)
     {
         var recipes = new List<RecipeDto>();
 
@@ -51,7 +50,7 @@ public static class ModelBuilderExtensions
         return recipes;
     }
     
-    private static IList<ProductDto> GenerateRandomProducts(int limit)
+    private static IEnumerable<ProductDto> GenerateRandomProducts(int limit)
     {
         var products = new List<ProductDto>();
 

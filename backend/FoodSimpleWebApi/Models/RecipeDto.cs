@@ -12,6 +12,8 @@ public sealed class RecipeDto
     
     public string Description { get; set; }
 
+    public string? Image { get; set; }
+
     public IList<ProductDto> Products { get; set; }
 
     public CookDifficult Difficult { get; set; }
