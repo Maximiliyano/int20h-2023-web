@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Local\\C#\\int20h-2023-web\\backend\\FoodSimpleWebApi\\FoodSimpleWebApi.csproj": {}
+    "C:\\Users\\алекс\\Source\\Repos\\int20h-2023-web\\backend\\FoodSimpleWebApi\\FoodSimpleWebApi.csproj": {}
   },
   "projects": {
-    "E:\\Local\\C#\\int20h-2023-web\\backend\\FoodSimpleWebApi\\FoodSimpleWebApi.csproj": {
+    "C:\\Users\\алекс\\Source\\Repos\\int20h-2023-web\\backend\\FoodSimpleWebApi\\FoodSimpleWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Local\\C#\\int20h-2023-web\\backend\\FoodSimpleWebApi\\FoodSimpleWebApi.csproj",
+        "projectUniqueName": "C:\\Users\\алекс\\Source\\Repos\\int20h-2023-web\\backend\\FoodSimpleWebApi\\FoodSimpleWebApi.csproj",
         "projectName": "FoodSimpleWebApi",
-        "projectPath": "E:\\Local\\C#\\int20h-2023-web\\backend\\FoodSimpleWebApi\\FoodSimpleWebApi.csproj",
-        "packagesPath": "C:\\Users\\maxim\\.nuget\\packages\\",
-        "outputPath": "E:\\Local\\C#\\int20h-2023-web\\backend\\FoodSimpleWebApi\\obj\\",
+        "projectPath": "C:\\Users\\алекс\\Source\\Repos\\int20h-2023-web\\backend\\FoodSimpleWebApi\\FoodSimpleWebApi.csproj",
+        "packagesPath": "C:\\Users\\алекс\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\алекс\\Source\\Repos\\int20h-2023-web\\backend\\FoodSimpleWebApi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "E:\\MS VS 2022 s\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\maxim\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\алекс\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -90,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
