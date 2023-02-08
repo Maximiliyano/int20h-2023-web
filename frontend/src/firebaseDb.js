@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app'
-import { getFirestore, doc, getDoc, updateDoc } from 'firebase/firestore'
+import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore'
 const firebaseConfig = {
   apiKey: 'AIzaSyCGGKGkCprzAWZTMKBR6ELts6aWyb-eKvk',
   authDomain: 'ricecode-meals.firebaseapp.com',
@@ -41,7 +41,7 @@ const getAllReceipts = async () => {
 
 const updateUser = async (user) => {
   const userRef = doc(db, 'users', user.email)
-  await updateDoc(userRef, {
+  await setDoc(userRef, {
     email: user.email,
     products: user.products
   })
