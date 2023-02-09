@@ -10,7 +10,6 @@ nupkg/
 
 # Rider
 .idea
-FoodSimpleWebApi\obj
 
 # User-specific files
 *.suo
@@ -36,5 +35,4 @@ msbuild.wrn
 
 # Visual Studio 2015
 .vs/
-backend/FoodSimpleWebApi/obj/Debug/net7.0/FoodSimpleWebApi.GeneratedMSBuildEditorConfig.editorconfig
-.gitignore
+backend/FoodSimpleWebApi/obj
