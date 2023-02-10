@@ -12,3 +12,8 @@ LOGIN via Google account or sign in
 View receipts, instructions and ingridients, sort by difficulty and availability
 View products, descriprion and category, add and remove by "+"/"-" or write count directly, sort by category and ownership. NB: press 'SAVE' button to save new count of product. Also there are no images, as they are not provided by open source api
 Log out using your avatar button
+
+Backend swagger:
+
+1. Instal .NET 7, SQL Server
+2. Run solution FoodSimple, DB automatically generated or not you will type in terminal route "backend/FoodSimpleWebApi": dotnet ef database update
